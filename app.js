@@ -6,14 +6,14 @@ if(!db){root.innerHTML='<div class="notice">Erro: não foi possível carregar da
 const byId=new Map(db.cards.map(c=>[c[0],c]));
 const isoTexts=window.X15_TEXTS||[];
 const isoTextById=new Map(isoTexts.map(x=>[x.id,x]));
-const classLabels={efeito:'Effect',gemini:'Gemini',subtipo:'Sub-Type',descricao:'Descrição',sem_descricao:'Sem descrição'};
+const classLabels={efeito:'Efeito',gemini:'Gemini',subtipo:'Sub-Type',descricao:'Descrição',sem_descricao:'Sem descrição'};
 const getText=id=>isoTextById.get(+id)||{en:'',pt:'',categoria:'sem_descricao',subtipos:[],marcadores:{}};
 const textBadge=id=>{const t=getText(id);return t.categoria==='sem_descricao'?'':`<span class="effect-flag">${classLabels[t.categoria]||'Texto ISO'}</span>`;};
-const textPanel=id=>{const t=getText(id);if(!t.en)return '<div class="effect-info unknown"><span class="effect-tag">Sem descrição na ISO</span><p>Nenhum texto foi encontrado para esta carta. Isso não comprova ausência de habilidades.</p></div>';
+const textPanel=id=>{const t=getText(id);if(!isoTexts.length)return '<div class="effect-info unknown"><strong>As descrições não carregaram.</strong> Atualize a página com Ctrl + F5.</div>';if(!t.en)return '<div class="effect-info unknown"><span class="effect-tag">Sem descrição na ISO</span><p>Nenhum texto foi encontrado para esta carta. Isso não comprova ausência de habilidades.</p></div>';
  const sub=t.subtipos?.length?`<div class="subtype-tags"><strong>Sub-Type</strong> ${t.subtipos.map(s=>`<span>${safe(s)}</span>`).join('')}</div>`:'';
  const isEffect=t.marcadores?.effect||t.marcadores?.gemini;
  const label=isEffect?(t.marcadores?.gemini?'Gemini':'Effect'):classLabels[t.categoria]||'Descrição';
- const pt=t.pt?`<div class="translation-primary"><span class="translation-kicker">DESCRIÇÃO EM PORTUGUÊS · ${safe(label)}</span><p class="effect-display">${safe(t.pt)}</p></div>`:'';
+ const pt=t.pt?`<div class="translation-primary"><span class="translation-kicker">DESCRIÇÃO EM PORTUGUÊS · ${safe(label)}</span><p class="effect-display">${safe(t.pt.replace(/<Effect>/g,'Efeito:'))}</p></div>`:'';
  const original=t.pt?`<details class="original-text"><summary>Consultar texto original em inglês (ISO)</summary><p class="effect-display">${safe(t.en)}</p></details>`:`<div class="original-text-alone"><h4>Texto original da ISO (English)</h4><p class="effect-display">${safe(t.en)}</p></div>`;
  return `<div class="effect-info">${sub}${pt}${original}</div>`;
 };
@@ -129,7 +129,7 @@ function fusionView(){let ra=parseCard(S.fusionA),rb=parseCard(S.fusionB),result
  <div style="margin-top:17px">${infoBox('As rotas são baseadas exclusivamente nas receitas de fusão extraídas da ISO. Não consideram efeitos especiais, equipamentos nem requisitos de posicionamento do campo.')}</div>`;
 }
 function effectsView(){
- const classes=[['all','Todas as cartas'],['efeito','Effect'],['gemini','Gemini'],['subtipo','Sub-Type sem Effect/Gemini'],['descricao','Descrição / Magias'],['sem_descricao','Sem descrição']];
+ const classes=[['all','Todas as cartas'],['efeito','Efeito'],['gemini','Gemini'],['subtipo','Sub-Type sem Effect/Gemini'],['descricao','Descrição / Magias'],['sem_descricao','Sem descrição']];
  const q=norm(S.effectTerm||'');let matches=db.cards.filter(c=>{const t=getText(c[0]);return (!q||norm(c[1]).includes(q)||String(c[0])===q||(norm(t.en).includes(q)||norm(t.pt).includes(q)))&&(!S.effectKind||S.effectKind==='all'||t.categoria===S.effectKind);});
  matches=matches.slice().sort((a,b)=>S.effectSort==='atk'?b[2]-a[2]:S.effectSort==='def'?b[3]-a[3]:S.effectSort==='name'?a[1].localeCompare(b[1]):a[0]-b[0]);
  const total=Math.max(1,Math.ceil(matches.length/30));S.effectPage=Math.max(0,Math.min(S.effectPage,total-1));const part=matches.slice(S.effectPage*30,S.effectPage*30+30);
