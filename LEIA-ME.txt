@@ -1,0 +1,6 @@
+Coloque aqui imagens por ID do Remaster X15, por exemplo:
+images/1.webp  = Blue-Eyes White Dragon
+images/5.jpg   = Pyramid Turtle (NÃO Ryukishin, apesar do ID 5 original)
+
+Use baixar_imagens.py para importar artes pelo nome.
+Não use o ID da versão original do jogo como correspondência de arte do mod.

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080d18" />
+  <meta name="description" content="Atlas X15: ATK, DEF, efeitos, drops, ranks, fusões e cartas do Yu-Gi-Oh! Forbidden Memories Remaster 1.2.1 X15, extraídos da ISO." />
+  <title>Atlas X15 — Cartas, efeitos, drops e fusões</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="data/catalogo.js"></script>
+  <script defer src="data/efeitos.js"></script>
+  <script defer src="data/textos_iso.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand"><span class="brand-mark">X<span>15</span></span><div><strong>ATLAS X15</strong><small>REMASTER DATABASE</small></div></div>
+      <div class="side-label">EXPLORAR</div>
+      <nav id="nav">
+        <button class="nav-btn active" data-route="inicio"><span class="nav-ico">◈</span> Visão geral</button>
+        <button class="nav-btn" data-route="drops"><span class="nav-ico">◉</span> Drops e ranks</button>
+        <button class="nav-btn" data-route="cartas"><span class="nav-ico">▣</span> Enciclopédia</button>
+        <button class="nav-btn" data-route="fusoes"><span class="nav-ico">✧</span> Laboratório de fusões</button>
+        <button class="nav-btn" data-route="efeitos"><span class="nav-ico">◈</span> Efeitos do mod</button>
+        <button class="nav-btn" data-route="guia"><span class="nav-ico">▤</span> Guia e metodologia</button>
+      </nav>
+      <div class="side-bottom"><div class="side-version"><span class="status-dot"></span> BASE: ISO 1.2.1 X15</div><small>Projeto independente de fãs. Artes e marcas pertencem a seus respectivos titulares.</small></div>
+    </aside>
+    <div class="main-column">
+      <header class="topbar">
+        <button id="mobile-menu" class="icon-button mobile-only" aria-label="Abrir menu">☰</button>
+        <div class="top-breadcrumb"><span class="mute">DATABASE</span><span class="slash">/</span><strong id="breadcrumb">Visão geral</strong></div>
+        <div class="top-actions"><span class="online-indicator"><span class="status-dot"></span> DADOS OFFLINE</span><div class="avatar">X</div></div>
+      </header>
+      <main id="view" tabindex="-1" aria-live="polite"><div class="loading">Carregando catálogo do Remaster…</div></main>
+      <footer class="footer"><span>ATLAS X15 <b>© Projeto não oficial</b></span><span>Dados extraídos da ISO • Probabilidades por sorteio • v1.5 — Links individuais para cartas</span></footer>
+    </div>
+  </div>
+  <div id="modal-layer" class="modal-layer hidden" aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>

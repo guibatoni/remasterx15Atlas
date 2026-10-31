@@ -1,0 +1,66 @@
+{
+  "source": "Notas públicas do criador Alpha Team MODs; efeitos individuais não extraídos integralmente da ISO 1.2.1.",
+  "lastAudit": "2026-10-31",
+  "entries": [
+    {
+      "id": 378,
+      "name": "Mine Golem",
+      "status": "Mudança documentada na v1.1",
+      "category": "Efeito de monstro",
+      "description": "O changelog oficial da v1.1 informa que o valor do efeito desta carta foi reduzido para 400. Não foi possível verificar o gatilho, o alvo ou as condições exatas do efeito na ISO 1.2.1.",
+      "confirmedParts": [
+        "Valor 400 mencionado no changelog v1.1"
+      ],
+      "unknownParts": [
+        "Gatilho do efeito",
+        "Alvo do efeito",
+        "Confirmação do comportamento na v1.2.1"
+      ],
+      "url": "https://www.patreon.com/TheLastMemoriesProject/posts/forbidden-update-140708346"
+    },
+    {
+      "id": 554,
+      "name": "Lava Battleguard",
+      "status": "Correção documentada na v1.1",
+      "category": "Efeito de monstro",
+      "description": "O changelog oficial da v1.1 informa que o efeito de Lava Battleguard foi corrigido. O texto específico e as condições da versão 1.2.1 não foram verificados. Não confundir com o efeito do TCG.",
+      "confirmedParts": [
+        "Correção de efeito citada no changelog v1.1"
+      ],
+      "unknownParts": [
+        "Descrição exata do efeito",
+        "Magnitude e duração",
+        "Confirmação do comportamento na v1.2.1"
+      ],
+      "url": "https://www.patreon.com/TheLastMemoriesProject/posts/forbidden-update-140708346"
+    }
+  ],
+  "mechanics": [
+    {
+      "title": "Bônus condicionais à mão/deck",
+      "detail": "Poder calculado automaticamente para efeitos que dependem da composição da mão ou do deck."
+    },
+    {
+      "title": "Imunidade entre monstros",
+      "detail": "O criador menciona novos tipos de imunidade, inclusive proteção contra outros monstros."
+    },
+    {
+      "title": "Equipamentos modificados",
+      "detail": "O Remaster inclui efeitos novos para cartas de equipamento."
+    },
+    {
+      "title": "Magias de restauração de campo",
+      "detail": "O criador menciona magias que devolvem o campo ao estado original."
+    },
+    {
+      "title": "IA para monstros de efeito",
+      "detail": "O comportamento da IA foi ajustado para considerar monstros com efeitos."
+    },
+    {
+      "title": "Bônus por identificação de cartas",
+      "detail": "O criador descreveu em desenvolvimento efeitos de fortalecimento de campo por ID, sem lista completa pública por carta."
+    }
+  ],
+  "mechanicsUrl": "https://www.patreon.com/TheLastMemoriesProject/posts/remaster-mod-and-133290100",
+  "limitations": "As rotinas e descrições exatas de cada carta não foram decodificadas. Este catálogo NÃO considera uma carta sem efeitos apenas porque ainda não foi identificada."
+}
