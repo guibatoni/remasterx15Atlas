@@ -29,3 +29,12 @@ Fonte primária: ISO `Yu-Gi-Oh! Remaster [VER. 1.2.1 - X15 - NO REQUIREMENTS].bi
 ## Atualização v1.5 — links individuais
 
 Os nomes de cartas nas seções Enciclopédia, Drops e ranks, Efeitos, Fusões e nas fichas abrem sua **ficha específica em uma nova aba**. Exemplo: `index.html#carta/241` para Vampire Lord, acessível tanto offline quanto em GitHub Pages. A ficha inclui ATK/DEF, descrição PT-BR, texto original, drops por rank e receitas de fusão. Os links usam os IDs internos do catálogo X15, sem redirecionar ao TCG. A opção **Copiar link** utiliza a área de transferência quando o navegador autoriza.
+
+
+## Atualização de adversários — ISO X15 1.2.1
+
+A tabela de nomes no executável `SLUS_014.11` foi conferida diretamente na ISO.
+Os **39 adversários** agora utilizam os nomes exibidos no mod (ex.: ID 7 = **Mage Guard**).
+As **3.972 entradas de drops**, os três ranks Z-POW/S-POW/S-TEC, as 722 cartas e as 23.334 fusões foram preservados.
+Cada grupo de drops por adversário e rank soma **2.048** unidades de peso.
+As artes já publicadas em `images/sprites` continuam sem alteração. Retratos individuais de oponentes ainda não estão disponíveis no site; o pacote de desktop inclui os arquivos extraídos da ISO.
